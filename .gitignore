@@ -1,7 +1,8 @@
 # dot files
-/.vscode/launch.json
+/.cmsis
+/.vscode
 /.settings
-/.eide/log
+/.eide
 /.eide.usr.ctx.json
 
 # project out
@@ -9,7 +10,15 @@
 /bin
 /obj
 /out
+/DebugConfig
+/Objects
+/Listings
 
 # eide template
 *.ept
 *.eide-template
+/Project.uvguix.bashenli
+/Project.uvguix.Admin
+/Project.code-workspace
+/.clang-format
+/keilkill.bat
