@@ -80,12 +80,12 @@ MenuGame_Config m7_cfg = {0};
 //小电视
 MenuTV_Config m8_cfg = {0};
 
-void Oled_Power_Init(void);
 void keys_get(void);
 void task_run(void);
 
 int main(void)
 {
+    Oled_Power_Init();
     OLED_Init();
     OLED_Clear();
     myTIM_Init();
