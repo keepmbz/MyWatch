@@ -70,7 +70,7 @@ void MyRtc_GetTime(MyTime_t *my_time)
     my_time->year = tim_inner[0];
     my_time->month = tim_inner[1];
     my_time->day = tim_inner[2];
-    my_time->hour = tim_inner[3];
+    my_time->hour = tim_inner[3];z
     my_time->minute = tim_inner[4];
     my_time->second = tim_inner[5];
 }

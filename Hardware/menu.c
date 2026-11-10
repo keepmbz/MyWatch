@@ -6,8 +6,8 @@
 void MenuMain(MenuMain_Config* cfg){
 	OLED_Printf(0,0,OLED_6X8,"%d-%d-%d",cfg->tm.year,cfg->tm.month,cfg->tm.day);
 		OLED_Printf(16,16,OLED_12X24,"%02d-%02d-%02d",cfg->tm.hour,cfg->tm.minute,cfg->tm.second);
-		OLED_ShowString(0,48,"\xB2\xCB\xB5\xA5",OLED_8X16);
-		OLED_ShowString(96,48,"\xC9\xE8\xD6\xC3",OLED_8X16);
+		OLED_ShowString(0,48,"菜单",OLED_8X16);
+		OLED_ShowString(96,48,"设置",OLED_8X16);
 		if(cfg->chance ==0)
 			OLED_ReverseArea(0,48,32,16);
 		else
@@ -51,7 +51,8 @@ void MenuMenu(MenuMenu_Config* cfg){
 
 void MenuSettings(MenuSettings_Config* cfg){
 	OLED_ShowImage(0,0,16,16,Return);
-	OLED_ShowString(0,16,"ʱ����������",OLED_8X16);
+	OLED_ShowString(0,16,"时间日期设置",OLED_8X16);
+
 	switch(cfg->chance){
 		case 0:
 			OLED_ReverseArea(0,0,16,16);
@@ -69,22 +70,22 @@ void MenuSetTime(MenuSetTime_Config* cfg){
 		if(tp_flag)OLED_Clear();
 		tp_flag = 0;
 		OLED_ShowImage(0,0,16,16,Return);
-		OLED_ShowString(0,16,"\xC4\xEA:",OLED_8X16);
+		OLED_ShowString(0,16,"年:",OLED_8X16);
 		OLED_Printf(32,16,OLED_8X16,"%04d",cfg->tm.year);
-		OLED_ShowString(0,32,"\xD4\xC2:",OLED_8X16);
+		OLED_ShowString(0,32,"月:",OLED_8X16);
 		OLED_Printf(32,32,OLED_8X16,"%02d",cfg->tm.month);
-		OLED_ShowString(0,48,"\xC8\xD5:",OLED_8X16);
+		OLED_ShowString(0,48,"日:",OLED_8X16);
 		OLED_Printf(32,48,OLED_8X16,"%02d",cfg->tm.day);
 		OLED_ReverseArea(0,16*cfg->chance,16,16);
 	}
 	else{
 		if(tp_flag ==0)OLED_Clear();
 		tp_flag = 1;
-		OLED_ShowString(0,0,"\xCA\xB1:",OLED_8X16);
+		OLED_ShowString(0,0,"时:",OLED_8X16);
 		OLED_Printf(32,0,OLED_8X16,"%02d",cfg->tm.hour);
-		OLED_ShowString(0,16,"\xB7\xD6:",OLED_8X16);
+		OLED_ShowString(0,16,"分:",OLED_8X16);
 		OLED_Printf(32,16,OLED_8X16,"%02d",cfg->tm.minute);
-		OLED_ShowString(0,32,"\xC3\xEB:",OLED_8X16);
+		OLED_ShowString(0,32,"秒:",OLED_8X16);
 		OLED_Printf(32,32,OLED_8X16,"%02d",cfg->tm.second);
 		OLED_ReverseArea(0,16*(cfg->chance-4),16,16);
 	}

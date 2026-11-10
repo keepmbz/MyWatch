@@ -86,7 +86,6 @@ void task_run(void);
 
 int main(void)
 {
-    // Oled_Power_Init();
     OLED_Init();
     OLED_Clear();
     myTIM_Init();
